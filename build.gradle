@@ -8,7 +8,7 @@ buildscript {
             'compileSdk'    : 27,
             'kotlin'        : '1.2.30',
             'supportLibrary': '27.0.2',
-            'androidPlugin' : '2.3.1',
+            'androidPlugin' : '3.0.1',
             'androidTools'  : '27.0.3',
     ]
 
@@ -77,7 +77,9 @@ buildscript {
 
 
     repositories {
+        google()
         jcenter()
+
 //        maven { url "https://jitpack.io" }
         maven {
             url 'https://dl.bintray.com/leobert-lan-oss/maven/'
@@ -92,10 +94,8 @@ buildscript {
         }
     }
     dependencies {
-//        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath deps.jimu.gradle_plugin
-
         classpath deps.android.gradlePlugin
+        classpath deps.jimu.gradle_plugin
         classpath deps.publish.jcenter
         classpath deps.publish.maven
         classpath deps.kotlin.kgp
@@ -104,8 +104,9 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        jcenter()
+
 //        maven { url 'https://jitpack.io' }
         maven {
             url 'https://dl.bintray.com/leobert-lan-oss/maven/'
